@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  naas:
+    build:
+      context: https://github.com/macxwhale/no-as-a-service.git
+      dockerfile: Dockerfile
+      args:
+        BRANCH: docker
+    container_name: naas
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    restart: unless-stopped

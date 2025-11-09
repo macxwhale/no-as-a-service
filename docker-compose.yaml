@@ -6,7 +6,7 @@ services:
       context: https://github.com/macxwhale/no-as-a-service.git
       dockerfile: Dockerfile
       args:
-        BRANCH: docker
+        BRANCH: main
     container_name: naas
     ports:
       - "3000:3000"

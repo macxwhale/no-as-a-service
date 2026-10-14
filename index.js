@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require("cors");
 const rateLimit = require('express-rate-limit');
-const fs = require('fs');
 
 const app = express();
 app.use(cors());
@@ -9,7 +8,7 @@ app.set('trust proxy', true);
 const PORT = process.env.PORT || 3000;
 
 // Load reasons from JSON
-const reasons = JSON.parse(fs.readFileSync('./reasons.json', 'utf-8'));
+const reasons = require('./reasons.json');
 
 // Rate limiter: 120 requests per minute per IP
 const limiter = rateLimit({
